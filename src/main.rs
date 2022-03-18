@@ -67,6 +67,13 @@ fn process(
 				);
 			}
 			(TxType::Withdrawal, Some(amount)) => {
+				// The task definition did not specify what exactly locking an
+				// account entails.The term "freeze" was also used to describe
+				// locking, so I went with the Investopedia  definition of
+				// allowing deposits, but not withdrawals.
+				// Further disputes and chargebacks are also allowed on locked
+				// accounts, based on my understanding of what the business
+				// logic should be in those cases.
 				if !acc.locked {
 					let amount = to_minor(*amount);
 					if acc.available >= amount {
