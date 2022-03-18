@@ -2,7 +2,6 @@ use serde::{Deserialize, Serialize};
 use std::{
 	collections::HashMap,
 	error::Error,
-	fmt::format,
 	fs::File,
 	io::{stdout, BufReader, BufWriter, Read, Write},
 };
